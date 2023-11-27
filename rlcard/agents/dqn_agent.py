@@ -44,19 +44,19 @@ class DQNAgent(object):
     that depends on PyTorch instead of Tensorflow
     '''
     def __init__(self,
-                 replay_memory_size=20000,
+                 replay_memory_size=500000,
                  replay_memory_init_size=100,
-                 update_target_estimator_every=1000,
+                 update_target_estimator_every=10000,
                  discount_factor=1,
                  epsilon_start=1.0,
                  epsilon_end=0.1,
-                 epsilon_decay_steps=10000000,
+                 epsilon_decay_steps=1000000,
                  batch_size=64,
                  num_actions=2,
                  state_shape=None,
                  train_every=1,
                  mlp_layers=None,
-                 learning_rate=0.00005,
+                 learning_rate=0.00025,
                  device=None,
                  save_path=None,
                  save_every=float('inf'),):
