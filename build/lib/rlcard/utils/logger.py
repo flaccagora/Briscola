@@ -23,7 +23,7 @@ class Logger(object):
 
         self.txt_file = open(self.txt_path, 'w')
         self.csv_file = open(self.csv_path, 'w')
-        fieldnames = ['episode', 'reward', 'win']
+        fieldnames = ['episode', 'random_reward', 'random_win', 'trained_reward', 'trained_win']
         self.writer = csv.DictWriter(self.csv_file, fieldnames=fieldnames)
         self.writer.writeheader()
 
@@ -65,6 +65,21 @@ class Logger(object):
         self.log('   win         |  ' + str(reward[1][0]))
         self.log('----------------------------------------')
 
+    def log_performance_tris(self, episode, random_reward, trained_reward):
+        ''' Log a point in the curve
+        Args:
+            episode (int): the episode of the current point
+            reward (float): the reward of the current point
+        '''
+        self.writer.writerow({'episode': episode, 'random_reward': random_reward[0][0], 'random_win': random_reward[1][0], 'trained_reward': trained_reward[0][0], 'trained_win': trained_reward[1][0]})
+        print('')
+        self.log('----------------------------------------')
+        self.log('  episode      |  ' + str(episode))
+        self.log('  reward       |  ' + str(random_reward[0][0]))
+        self.log('   win         |  ' + str(random_reward[1][0]))
+        self.log('  reward       |  ' + str(trained_reward[0][0]))
+        self.log('   win         |  ' + str(trained_reward[1][0]))
+        self.log('----------------------------------------')
 
     def log_info(self, info):
         ''' Log info
