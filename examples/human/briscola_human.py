@@ -1,6 +1,5 @@
 from tkinter import *
 import random
-from PIL import Image, ImageTk
 from tkinter import messagebox
 import rlcard
 from rlcard import models
@@ -24,7 +23,7 @@ def play(args):
 
     import torch
 
-    load_checkpoint_path  = "./experiments/game_pompato/checkpoint_dqn.pt-100000"
+    load_checkpoint_path  = "./experiments/round_game/checkpoint_dqn.pt-475000"
 
     if load_checkpoint_path != "":
         dqn_agent = DQNAgent.from_checkpoint(checkpoint=torch.load(load_checkpoint_path))

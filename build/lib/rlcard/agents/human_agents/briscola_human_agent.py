@@ -1,7 +1,6 @@
 from rlcard.games.briscola.card import BriscolaCard
 from tkinter import *
 import random
-from PIL import Image, ImageTk
 from tkinter import messagebox
 import queue  
 from rlcard.agents.human_agents.interfaccia import main_app
