@@ -7,16 +7,19 @@ This is a simple implementation of the card game Briscola. The game is played be
 
 Before running, install torch
 > pip install torch torchvision torchaudio
+\
+
 then install rlcard:
+
 > pip install .
 
 ### Train
 
 Usually something like this:
 
-> python3 ./examples/run_rl.py --cuda="0" --num_episodes=50000 --num_eval_games=100 --evaluate_every=1000 --save_every=1000 --algorithm="dqn" --load_checkpoint_path="experiments/briscola_dqn_final" --log_dir="experiments/briscola_dqn_final/"
+> python3 ./examples/run_rl_finale.py --log_dir="experiments/briscola_dqn_final/"
 
-if using `dqn`. When using `nfsp` use `--algorithm="nfsp"` and modify log_dir and load_checkpoint_path accordingly.
+if using `dqn`. When using `nfsp` use `--algorithm="nfsp"`.
 
 ### Play against Agent
 
@@ -25,4 +28,4 @@ Default play against dqn agent, change code if you want to play against nfsp age
 > python3 ./examples/human/briscola_human.py --opp_hand_visible="True"
 
 ### Test
-Per testare con diversi reward sostituire i file in `Different_Rewards` con quelli in `rlcard/env/Briscoola`  e `rlcard/utils` e lanciare il comando `pip install .` da terminale.
+Per testare con diversi reward sostituire i file in `Different_Rewards` con quelli in `rlcard/env/Briscola`  e `rlcard/utils` e lanciare il comando `pip install .` da terminale.
