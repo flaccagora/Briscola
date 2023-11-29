@@ -28,3 +28,15 @@ Default play against dqn agent, change code if you want to play against nfsp age
 
 ### Test
 Per testare con diversi reward sostituire i file in `Different_Rewards` con quelli in `rlcard/env/Briscola`  e `rlcard/utils` e lanciare il comando `pip install .` da terminale.
+
+## Our code
+this repo is  a fork of the official RLCards repo, we modified the following files:
+- `examples/run_rl_finale.py`
+- `rlcard/env/Briscola/briscola.py`
+- `rlcard/env/Briscola` folder
+- `rlcard/utils/utils.py`
+- `rlcard/agents/dqn_agent.py`
+- `rlcard/agents/human_agent.py` and `rlcard/agents/interfaccia.py`
+-  `examples/human/briscola_human.py`
+
+and other minor changes in other files.
