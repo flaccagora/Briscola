@@ -17,7 +17,7 @@ def play(args):
     '''
 
     # Make environment
-    env = rlcard.make('briscola')
+    env = rlcard.make('briscola', config={'seed': args.seed})
 
     from rlcard.agents import DQNAgent, NFSPAgent
 
@@ -129,6 +129,8 @@ def play(args):
             opponent_card_image3 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{opponents_cards[2]}.png')
             # Output Card To Screen
             opponent_label_3.config(image=opponent_card_image3)    
+    else:
+        app_instance.opponent_frame.destroy()
 
     prev_player_id= 0
     
@@ -173,6 +175,11 @@ def play(args):
             #mostra action sul tavolo, mostra due carte del giocatore (state['hand']-action) per un po di tempo, poi aggiorna allo stato successivo
             
             def update_state(next_state, opp_hand_visible):
+
+                app_instance.card0_button.config(state="normal")
+                app_instance.card1_button.config(state="normal")
+                app_instance.card2_button.config(state="normal")
+
                 next_state1=next_state['raw_obs']
                 #show briscola
                 card = next_state1['briscola']
@@ -191,28 +198,35 @@ def play(args):
                 # Resize Card
                 if(len(cards))>0:
                     app_instance.player_image1 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{cards[0]}.png')
-                # Output Card To Screen
-                player_label_1.config(image=app_instance.player_image1) 
-                #app_instance.root.update_idletasks() 
-                if(len(next_state1['hand']))<2:
-                    player_label_2.config(image='')
-                    #app_instance.root.update_idletasks()
-                else:
-                    # Resize Card
-                    app_instance.player_image2 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{cards[1]}.png')
                     # Output Card To Screen
-                    player_label_2.config(image=app_instance.player_image2) 
+                    player_label_1.config(image=app_instance.player_image1) 
                     #app_instance.root.update_idletasks() 
-                if(len(next_state1['hand']))<3:
-                    player_label_3.config(image='')
-                    #app_instance.root.update()
-                else:
-                    # Resize Card
-                    app_instance.player_image3 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{cards[2]}.png')
-                    # Output Card To Screen
-                    player_label_3.config(image=app_instance.player_image3)
-                    #app_instance.root.update_idletasks()
+                    if(len(next_state1['hand']))<2:
+                        player_label_2.config(image='')
+                        app_instance.card1_button.config(state="disabled")
 
+                        #app_instance.root.update_idletasks()
+                    else:
+                        # Resize Card
+                        app_instance.player_image2 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{cards[1]}.png')
+                        # Output Card To Screen
+                        player_label_2.config(image=app_instance.player_image2) 
+                        #app_instance.root.update_idletasks() 
+                    if(len(next_state1['hand']))<3:
+                        player_label_3.config(image='')
+                        app_instance.card2_button.config(state="disabled")
+
+                        #app_instance.root.update()
+                    else:
+                        # Resize Card
+                        app_instance.player_image3 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{cards[2]}.png')
+                        # Output Card To Screen
+                        player_label_3.config(image=app_instance.player_image3)
+                        #app_instance.root.update_idletasks()
+                else:
+                    player_label_1.config(image='')
+                    app_instance.card0_button.config(state="disabled")
+                
                 #show table cards
                 cards=next_state1['played_cards']
                 table_label=app_instance.table_label
@@ -256,12 +270,16 @@ def play(args):
                         app_instance.opponent_image3 = app_instance.resize_cards(f'./rlcard/agents/human_agents/images/cards/{opponents_cards[2]}.png')
                         # Output Card To Screen
                         opponent_label_3.config(image=app_instance.opponent_image3)
-                    
-                    #app_instance.root.after(10, app_instance.root.update)
-                    #app_instance.root.update()
-                
+                else:
+                    app_instance.opponent_frame.destroy()
+
+            
+            app_instance.card0_button.config(state="disabled")
+            app_instance.card1_button.config(state="disabled")
+            app_instance.card2_button.config(state="disabled")
+
             #app_instance.root.bind("<Return>", lambda event: on_enter_press(event, next_state))    
-            app_instance.root.after(3000, lambda: update_state(next_state, args.opp_hand_visible))
+            app_instance.root.after(2000, lambda: update_state(next_state, args.opp_hand_visible))
         
                 
             
@@ -349,8 +367,14 @@ if __name__ == '__main__':
     parser.add_argument(
          "--opp_hand_visible",
             type=str,
-            default="True",
+            default="False",
             choices=["True", "False"]
+    )
+    parser.add_argument(
+        '--seed',
+        type=int,
+        default=0,
+        help='Random seed'
     )
 
     args = parser.parse_args()

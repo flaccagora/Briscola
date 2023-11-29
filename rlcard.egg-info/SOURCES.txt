@@ -61,6 +61,7 @@ rlcard/agents/human_agents/gin_rummy_human_agent/gui_gin_rummy/utils_extra.py
 rlcard/envs/__init__.py
 rlcard/envs/blackjack.py
 rlcard/envs/bridge.py
+rlcard/envs/briscola.py
 rlcard/envs/doudizhu.py
 rlcard/envs/env.py
 rlcard/envs/gin_rummy.py

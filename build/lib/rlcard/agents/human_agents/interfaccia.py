@@ -27,7 +27,7 @@ class MainApp(object):
         self.action_queue = queue.Queue()
         #self.root.title('Codemy.com - Card Deck')
         #root.iconbitmap('c:/gui/codemy.ico')
-        self.root.geometry("1280x800")
+        self.root.geometry("1920x1080")
         self.root.configure(background="green")
         
         
@@ -159,7 +159,7 @@ class MainApp(object):
         our_card_img = Image.open(card)
 
         # Resize The Image
-        our_card_resize_image = our_card_img.resize((67, 96))
+        our_card_resize_image = our_card_img.resize((134, 192))
 	
         # output the card
         global our_card_image

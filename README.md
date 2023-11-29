@@ -7,7 +7,7 @@ This is a simple implementation of the card game Briscola. The game is played be
 
 Before running, install torch
 > pip install torch torchvision torchaudio
-\
+
 
 then install rlcard:
 
@@ -19,7 +19,6 @@ Usually something like this:
 
 > python3 ./examples/run_rl_finale.py --log_dir="experiments/briscola_dqn_final/"
 
-if using `dqn`. When using `nfsp` use `--algorithm="nfsp"`.
 
 ### Play against Agent
 
