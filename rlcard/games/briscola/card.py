@@ -172,15 +172,5 @@ class BriscolaCard:
             print(', '.join(card_strings))
 
             
-# Testing lines
-#cards = [BriscolaCard('S', '7'),BriscolaCard('S', '7'),BriscolaCard('S', '7')]
-#BriscolaCard.print_cards(cards)
-#BriscolaCard.print_cards_string(cards)
 
-#for i, action in enumerate(cards):
-#    print(str(i)+': ', end='')
-#    str(BriscolaCard.print_cards_string(action))
-#    if i < len(cards) - 1:
-#        print(', ', end='')
-#print('\n')
 
