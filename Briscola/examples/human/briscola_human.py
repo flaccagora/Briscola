@@ -23,7 +23,7 @@ def play(args):
 
     import torch
 
-    load_checkpoint_path  = "./experiments/round_game/checkpoint_dqn.pt-475000"
+    load_checkpoint_path  = args.checkpoint_path
 
     if load_checkpoint_path != "":
         dqn_agent = DQNAgent.from_checkpoint(checkpoint=torch.load(load_checkpoint_path))
@@ -363,6 +363,12 @@ def play(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("DQN/NFSP example in RLCard")
+    
+    parser.add_argument(
+         "--checkpoint_path",
+            type=str,
+            default=""
+    )
 
     parser.add_argument(
          "--opp_hand_visible",

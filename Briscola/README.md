@@ -1,22 +1,3 @@
-Metadata-Version: 2.1
-Name: rlcard
-Version: 1.2.0
-Summary: A Toolkit for Reinforcement Learning in Card Games
-Home-page: https://github.com/datamllab/rlcard
-Author: Data Analytics at Texas A&M (DATA) Lab
-Author-email: daochen.zha@tamu.edu
-Keywords: Reinforcement Learning,game,RL,AI
-Classifier: Programming Language :: Python :: 3.11
-Classifier: Programming Language :: Python :: 3.10
-Classifier: Programming Language :: Python :: 3.9
-Classifier: Programming Language :: Python :: 3.8
-Classifier: Programming Language :: Python :: 3.7
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Description-Content-Type: text/markdown
-Provides-Extra: torch
-License-File: LICENSE.md
-
 # BRISCOLA
 
 ## Description
