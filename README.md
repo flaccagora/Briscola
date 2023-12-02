@@ -22,12 +22,12 @@ Usually something like this:
 
 ### Play against Agent
 
-Default play against dqn agent, change code if you want to play against nfsp agent or different checkpoint.
+Default play against dqn agent, change code if you want to play against a different checkpoint.
 
 > python3 ./examples/human/briscola_human.py --opp_hand_visible="True"
 
 ### Test
-Per testare con diversi reward sostituire i file in `Different_Rewards` con quelli in `rlcard/env/Briscola`  e `rlcard/utils` e lanciare il comando `pip install .` da terminale.
+To test different rewards in training phase substitute the files in `Different_Rewards` folder with those in `rlcard/env/Briscola` (game.py)  and `rlcard/utils` (utils.py). Finally, launch the command `pip install .`.
 
 ## Our code
 this repo is  a fork of the official RLCards repo, we modified the following files:
