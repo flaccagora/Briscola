@@ -20,17 +20,19 @@ Usually something like this:
 > python3 ./examples/run_rl_finale.py --log_dir="experiments/briscola_dqn_final/"
 
 
-### Play against Agent
+### Play against a trained Agent with a GUI interface
 
-Default play against dqn agent, change code if you want to play against a different checkpoint.
+- Download model checkpoint from https://huggingface.co/paolvz/briscola_dqn (best checkpoint is the only_round folder)
+- Put the checkpoint_dqn.pt-475000 in briscola/experiments/only_round or only_game
+- Run this command in briscola folder:
 
-> python3 ./examples/human/briscola_human.py --opp_hand_visible="True"
+> python3 ./examples/human/briscola_human.py --opp_hand_visible="True" --checkpoint_path="./experiments/**path_to_your_checkpoint**"
 
 ### Test
-To test different rewards in training phase substitute the files in `Different_Rewards` folder with those in `rlcard/env/Briscola` (game.py)  and `rlcard/utils` (utils.py). Finally, launch the command `pip install .`.
+To test different rewards in training phase substitute the files in `Different_Rewards` folder with those in `rlcard/env/Briscola` (game.py)  and `rlcard/utils` (utils.py). Finally, launch the command `pip install .`
 
 ## Our code
-this repo is  a fork of the official RLCards repo, we modified the following files:
+This repo is  a fork of the official RLCards repo, we modified the following files:
 - `examples/run_rl_finale.py`
 - `rlcard/env/Briscola/briscola.py`
 - `rlcard/env/Briscola` folder
@@ -40,3 +42,5 @@ this repo is  a fork of the official RLCards repo, we modified the following fil
 -  `examples/human/briscola_human.py`
 
 and other minor changes in other files.
+
+Reinforcement Learning exam's project by Matteo Nunziante, Paolo Vizzo, Noemi Ippolito
