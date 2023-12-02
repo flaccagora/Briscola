@@ -1,6 +1,6 @@
 # BRISCOLA
 
-![alt text](http://github.com/flaccagora/Briscola/blob/main/gui_screenshot.png)
+![alt text](./gui_screenshot.png)
 ## Description
 This is a simple implementation of the card game Briscola. The game is played between two players, one of which is the computer. The game is played with a deck of 40 cards, and the goal is to score more points than the opponent. The game is played in turns, and each turn consists of two phases: the first player plays a card, then the second player plays a card. The winner of the turn is the player who played the highest card, according to the following order: ace, three, king, queen, jack, seven, six, five, four, two.The game ends when all the cards have been played. The player with the highest score wins the game.
 
