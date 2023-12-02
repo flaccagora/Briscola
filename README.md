@@ -45,4 +45,5 @@ This repo is  a fork of the official RLCards repo, we modified the following fil
 and other minor changes in other files.
 
 *Reinforcement Learning exam's project by Matteo Nunziante (github.com/flaccagora), Paolo Vizzo (github.com/paolvz), Noemi Ippolito (github.com/noemiippolito)
+
 Master Degree in Data Science and Scientific Computing - University of Trieste*
